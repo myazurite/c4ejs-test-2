@@ -1,0 +1,120 @@
+.navbar {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 70px;
+  position: relative;
+
+  &__input {
+    border: 1px solid #BFC8E5;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 8px;
+
+    input {
+      font-size: 16px;
+      border: none;
+      outline: none;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__items {
+    margin-left: auto;
+
+    .active {
+      border-radius: 8px;
+      background: #849FFF;
+      color: #fff;
+    }
+
+    .navLink {
+      padding: 16px;
+    }
+  }
+
+  .mobileMenu {
+    display: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  @include breakpoint("phone") {
+    .navbar__input {
+      border: none;
+      padding: 0;
+    }
+
+    .mobileMenu {
+      display: inline-block;
+      margin-left: auto;
+    }
+  }
+
+  @include breakpoint("phone") {
+    display: block;
+
+    .navbar__input {
+      border: none;
+      padding: 0;
+    }
+
+    &__items {
+      display: none;
+    }
+
+    .mobileMenu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+    }
+  }
+
+  @include breakpoint("tablet") {
+    display: block;
+
+    .navbar__input {
+      border: none;
+      padding: 0;
+    }
+
+    &__items {
+      display: none;
+    }
+
+    .mobileMenu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+    }
+  }
+}
+
+.mobileActive {
+  .navbar {
+    display: block;
+    position: relative;
+
+    &__items {
+      background: #fff;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 8px 23px 0 #DAE0F9B2;
+    }
+  }
+}

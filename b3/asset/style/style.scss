@@ -1,0 +1,42 @@
+@import "media";
+@import "navbar";
+@import "users";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #BFC8E6;
+}
+
+h2, h4 {
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.wrapper {
+  padding: 100px;
+  width: fit-content;
+  margin: auto;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 23px 0 #DAE0F9B2;
+}
+
+@include breakpoint("tablet") {
+  .wrapper {
+    padding: 50px;
+  }
+}

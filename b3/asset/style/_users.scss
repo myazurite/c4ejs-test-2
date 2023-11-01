@@ -1,0 +1,71 @@
+.users {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  &__card {
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    border-radius: 16px;
+    height: 210px;
+    width: 330px;
+    border: 1px solid transparent;
+
+    &:hover {
+      box-shadow: 0 8px 23px 0 #DAE0F9B2;
+      border-color: #BFC8E5;
+    }
+
+    .cardImg {
+      border-radius: 50%;
+    }
+
+    .cardUserInfo {
+      .userName {
+        font-family: "Merriweather", serif;
+        font-weight: 900;
+        font-size: 18px;
+      }
+
+      .userAdress {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+
+      .userTags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+        .tag {
+          background: none;
+          color: #516FD4;
+          border: 1px solid #516FD4;
+          border-radius: 10px;
+          padding: 2px 8px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @include breakpoint("phone") {
+    display: block;
+
+    &__card {
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+
+  @include breakpoint("tablet") {
+    grid-template-columns: repeat(2, 1fr);
+
+    &__card {
+      width: fit-content;
+      height: fit-content;
+    }
+  }
+}
